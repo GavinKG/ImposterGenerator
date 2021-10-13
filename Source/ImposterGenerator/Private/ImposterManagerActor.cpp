@@ -63,7 +63,10 @@ void AImposterManagerActor::A_AddSceneActors()
 
 void AImposterManagerActor::B_InitCore()
 {
-	Core = NewObject<UImposterCore>(this, TEXT("Imposter Core"));
+	if (!Core)
+	{
+		Core = NewObject<UImposterCore>(this, TEXT("Imposter Core"));
+	}
 
 	TArray<AActor*> CapturedActorsRawPtr;
 	for (auto &Ptr : CapturedActors)
