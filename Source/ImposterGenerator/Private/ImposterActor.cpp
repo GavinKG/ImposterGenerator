@@ -12,5 +12,6 @@ AImposterActor::AImposterActor()
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
 	StaticMeshComponent->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	StaticMeshComponent->SetCastShadow(false);
 	
 }
