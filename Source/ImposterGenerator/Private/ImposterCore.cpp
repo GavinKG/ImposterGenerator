@@ -527,7 +527,7 @@ void UImposterCore::PreviewImposter()
 
 	// Transient Actor
 	FActorSpawnParameters Params;
-	Params.Name = MakeUniqueObjectName(this, AImposterActor::StaticClass(), FName(GetActorAssetName()));
+	// Params.Name = MakeUniqueObjectName(this, AImposterActor::StaticClass(), FName(GetActorAssetName()));
 	Params.ObjectFlags |= RF_Transient;
 	AImposterActor* ImposterActor = GetWorld()->SpawnActor<AImposterActor>(
 		CaptureBounds.Origin, FRotator::ZeroRotator, Params);
