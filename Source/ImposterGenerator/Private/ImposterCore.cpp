@@ -46,11 +46,25 @@ UImposterCore::UImposterCore()
 
 bool UImposterCore::CanAddActorToCapture(const AActor* Actor)
 {
+	// null check
 	if (!Actor)
 	{
 		return false;
 	}
 
+	// if actor is an imposter actor, ignore.
+	if (Actor->IsA(AImposterActor::StaticClass()))
+	{
+		return false;
+	}
+
+	// if actor is hidden, ignore.
+	if (Actor->IsHidden() || Actor->IsHiddenEd())
+	{
+		return false;
+	}
+	
+	// should have at least one static mesh component.
 	TArray<UStaticMeshComponent*> StaticMeshComponents;
 	Actor->GetComponents(StaticMeshComponents, false);
 
