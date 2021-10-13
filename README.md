@@ -10,7 +10,7 @@ todo:
 - [ ] Support roughness, metallic and AO map (already has a capture material for RMA)
 - [ ] Plugin UI
 
-bugfix:
+bugs:
 
-- [ ] duplicate naming will cause crash
+- [x] duplicate naming will cause crash
 - [ ] sublevel cannot save
