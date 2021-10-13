@@ -64,7 +64,18 @@ void AImposterManagerActor::A_AddSceneActors()
 void AImposterManagerActor::B_InitCore()
 {
 	Core = NewObject<UImposterCore>(this, TEXT("Imposter Core"));
-	Core->Init(Settings, CapturedActors, TEXT("Imposter"));
+
+	TArray<AActor*> CapturedActorsRawPtr;
+	for (auto &Ptr : CapturedActors)
+	{
+		AActor* Actor = Ptr.Get();
+		if (Actor)
+		{
+			CapturedActorsRawPtr.Add(Actor);
+		}
+	}
+	
+	Core->Init(Settings, CapturedActorsRawPtr, TEXT("Imposter"));
 	CopyDebugFromCore();
 }
 

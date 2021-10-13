@@ -31,11 +31,11 @@ public:
 	FImposterGeneratorSettings Settings;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Imposter)
-	TArray<AActor*> CapturedActors;
+	TArray<TSoftObjectPtr<AActor>> CapturedActors;
 
 	UFUNCTION(BlueprintCallable, CallInEditor, Category=Actions)
 	void A_AddSceneActors();
-	
+
 	UFUNCTION(BlueprintCallable, CallInEditor, Category=Actions)
 	void B_InitCore();
 
@@ -44,7 +44,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, CallInEditor, Category=Actions)
 	void D_Generate();
-	
+
 	UFUNCTION(BlueprintCallable, CallInEditor, Category=Actions)
 	void E_Preview();
 
@@ -55,19 +55,11 @@ public:
 	void DebugCaptureBounds();
 
 
-
-	
-
 	UPROPERTY(VisibleAnywhere, Transient, Category="Debug|Capture")
 	TMap<EImposterCaptureType, class UTextureRenderTarget2D*> CapturedTexMap;
 
 	UPROPERTY(VisibleAnywhere, Transient, Category="Debug|Capture")
 	UTextureRenderTarget2D* MiddleRT;
-
-	UPROPERTY(VisibleAnywhere, Transient, Category="Debug|Capture")
-	TArray<UTextureRenderTarget2D*> ComposedRenderTargets;
-
-	
 
 private:
 	UPROPERTY(Transient)
