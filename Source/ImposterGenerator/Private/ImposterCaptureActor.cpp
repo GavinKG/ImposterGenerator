@@ -46,7 +46,6 @@ void AImposterCaptureActor::RegisterActorInfo(const TArray<AActor*>& Actors, con
 {
 	SceneCaptureComponent2D->ShowOnlyActors = Actors;
 	SceneCaptureComponent2D->OrthoWidth = Bounds.SphereRadius * 2.0f;
-	SceneCaptureComponent2D->MaxViewDistanceOverride = Bounds.SphereRadius * 2.0f; // make scene depth work.
 }
 
 void AImposterCaptureActor::SetPostProcessingMaterial(UMaterialInterface* Material)
