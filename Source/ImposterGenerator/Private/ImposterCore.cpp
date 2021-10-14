@@ -519,6 +519,7 @@ void UImposterCore::GenerateImposter(bool bCreateSublevel, const FVector& Offset
 	check(StaticMeshComponent);
 	StaticMeshComponent->SetStaticMesh(Settings.UnitQuad);
 	StaticMeshComponent->SetMaterial(0, Mic);
+	StaticMeshComponent->SetBoundsScale(CaptureBounds.SphereRadius); // prevent OC flickering
 }
 
 void UImposterCore::PreviewImposter()
@@ -550,7 +551,7 @@ void UImposterCore::PreviewImposter()
 	check(StaticMeshComponent);
 	StaticMeshComponent->SetStaticMesh(Settings.UnitQuad);
 	StaticMeshComponent->SetMaterial(0, Mid);
-	
+	StaticMeshComponent->SetBoundsScale(CaptureBounds.SphereRadius);
 }
 
 void UImposterCore::DebugCaptureDirections() const
