@@ -46,8 +46,8 @@ enum class EImposterCaptureType : uint8
 	// RGB: Base Color, A: Opacity
 	NormalDepth,
 	// RGB: Normal, A: Linear Depth
-	MetallicRoughnessAO,
-	// R: Metallic, G: Roughness, B: AO, A: (not defined)
+	MetallicRoughnessSpecularAO,
+	// R: Metallic, G: Roughness, B: Specular, A: AO
 
 	// Custom type.
 	// Actually, all types above can be considered as a named custom type since logics are the same.

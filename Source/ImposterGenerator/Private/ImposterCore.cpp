@@ -608,7 +608,7 @@ FString UImposterCore::CaptureTypeEnumToString(EImposterCaptureType Type)
 	case EImposterCaptureType::Emissive: return TEXT("Emissive");;
 	case EImposterCaptureType::BaseColorAlpha: return TEXT("BaseColorAlpha");;
 	case EImposterCaptureType::NormalDepth: return TEXT("NormalDepth");;
-	case EImposterCaptureType::MetallicRoughnessAO: return TEXT("MetallicRoughnessAO");;
+	case EImposterCaptureType::MetallicRoughnessSpecularAO: return TEXT("MetallicRoughnessSpecularAO");;
 	case EImposterCaptureType::Custom1: return TEXT("Custom1");;
 	case EImposterCaptureType::Custom2: return TEXT("Custom2");;
 	case EImposterCaptureType::Custom3: return TEXT("Custom3");;
