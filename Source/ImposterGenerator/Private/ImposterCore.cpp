@@ -6,6 +6,7 @@
 #include "AssetToolsModule.h"
 #include "DrawDebugHelpers.h"
 #include "EditorLevelUtils.h"
+#include "FileHelpers.h"
 #include "IAssetTools.h"
 #include "ImposterActor.h"
 #include "ImposterCaptureActor.h"
@@ -497,8 +498,8 @@ void UImposterCore::GenerateImposter(bool bCreateSublevel, const FVector& Offset
 	Mic->SetScalarParameterValueEditorOnly(Settings.ImposterMaterialGridSizeParam, Settings.GridSize);
 	Mic->SetScalarParameterValueEditorOnly(Settings.ImposterMaterialSizeParam, CaptureBounds.SphereRadius * 2);
 
+	// Step.3: Create Sublevel.
 	ULevel* SubLevel = nullptr;
-
 	if (bCreateSublevel)
 	{
 		ULevelStreaming* LevelStreaming = Cast<ULevelStreamingDynamic>(
@@ -509,7 +510,7 @@ void UImposterCore::GenerateImposter(bool bCreateSublevel, const FVector& Offset
 		EditorLevelUtils::MakeLevelCurrent(LevelStreaming); // for spawn actor
 	}
 
-	// Step.3: Generate Imposter to scene.
+	// Step.4: Generate Imposter to scene.
 	FActorSpawnParameters Params;
 	Params.Name = FName(GetActorAssetName());
 	AImposterActor* ImposterActor = GetWorld()->SpawnActor<AImposterActor>(
@@ -520,6 +521,8 @@ void UImposterCore::GenerateImposter(bool bCreateSublevel, const FVector& Offset
 	StaticMeshComponent->SetStaticMesh(Settings.UnitQuad);
 	StaticMeshComponent->SetMaterial(0, Mic);
 	StaticMeshComponent->SetBoundsScale(CaptureBounds.SphereRadius / 100.0f); // prevent OC flickering, 100: considered as 1uu, UnitQuad=100uu
+	
+	FEditorFileUtils::SaveLevel(SubLevel, GetSubLevelPackageName());
 }
 
 void UImposterCore::PreviewImposter()
