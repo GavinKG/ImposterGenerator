@@ -594,8 +594,6 @@ ESceneCaptureSource UImposterCore::GetSceneCaptureSourceFrom(EImposterCaptureTyp
 
 FString UImposterCore::CaptureTypeEnumToString(EImposterCaptureType Type)
 {
-	// todo: better way? e.g.: use reflection
-
 	switch (Type)
 	{
 	case EImposterCaptureType::SceneColor: return TEXT("SceneColor");
@@ -607,19 +605,20 @@ FString UImposterCore::CaptureTypeEnumToString(EImposterCaptureType Type)
 	case EImposterCaptureType::Specular: return TEXT("Specular");
 	case EImposterCaptureType::AO: return TEXT("AO");
 	case EImposterCaptureType::BaseColor: return TEXT("BaseColor");
-	case EImposterCaptureType::SceneDepth: return TEXT("SceneDepth");;
-	case EImposterCaptureType::Emissive: return TEXT("Emissive");;
-	case EImposterCaptureType::BaseColorAlpha: return TEXT("BaseColorAlpha");;
-	case EImposterCaptureType::NormalDepth: return TEXT("NormalDepth");;
-	case EImposterCaptureType::MetallicRoughnessSpecularAO: return TEXT("MetallicRoughnessSpecularAO");;
-	case EImposterCaptureType::Custom1: return TEXT("Custom1");;
-	case EImposterCaptureType::Custom2: return TEXT("Custom2");;
-	case EImposterCaptureType::Custom3: return TEXT("Custom3");;
-	case EImposterCaptureType::Custom4: return TEXT("Custom4");;
-	case EImposterCaptureType::Custom5: return TEXT("Custom5");;
-	case EImposterCaptureType::Custom6: return TEXT("Custom6");;
+	case EImposterCaptureType::SceneDepth: return TEXT("SceneDepth");
+	case EImposterCaptureType::Emissive: return TEXT("Emissive");
+	case EImposterCaptureType::BaseColorAlpha: return TEXT("BaseColorAlpha");
+	case EImposterCaptureType::NormalDepth: return TEXT("NormalDepth");
+	case EImposterCaptureType::MetallicRoughnessSpecularAO: return TEXT("MetallicRoughnessSpecularAO");
+	case EImposterCaptureType::Custom1: return TEXT("Custom1");
+	case EImposterCaptureType::Custom2: return TEXT("Custom2");
+	case EImposterCaptureType::Custom3: return TEXT("Custom3");
+	case EImposterCaptureType::Custom4: return TEXT("Custom4");
+	case EImposterCaptureType::Custom5: return TEXT("Custom5");
+	case EImposterCaptureType::Custom6: return TEXT("Custom6");
+	default: check(0);
 	}
-	return TEXT("Invalid");
+	return TEXT("");
 }
 
 void UImposterCore::PrefixReplaceContentToGame(FString& Path)
