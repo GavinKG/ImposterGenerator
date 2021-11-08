@@ -21,6 +21,9 @@ public:
 	FImposterGeneratorSettings Settings;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Imposter)
+	FString ImposterName = TEXT("Imposter");
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Imposter)
 	TArray<TSoftObjectPtr<AActor>> CapturedActors;
 
 	UFUNCTION(BlueprintCallable, CallInEditor, Category=Actions)

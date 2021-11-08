@@ -78,7 +78,7 @@ void AImposterManagerActor::B_InitCore()
 		}
 	}
 	
-	Core->Init(Settings, CapturedActorsRawPtr, TEXT("Imposter"));
+	Core->Init(Settings, CapturedActorsRawPtr, ImposterName);
 	CopyDebugFromCore();
 }
 

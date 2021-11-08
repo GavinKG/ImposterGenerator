@@ -172,6 +172,8 @@ public: // members
 	FImposterGeneratorSettings Settings;
 
 private:
+
+	// Set by Init()
 	UPROPERTY()
 	FString ImposterName = TEXT("Imposter");
 
