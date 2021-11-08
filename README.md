@@ -1,18 +1,16 @@
 # Imposter 插件 说明文档
 
 v1.0 | for Unreal Engine 4+
+
 malosgao(高锴庚)
+
 2021/11/8
 
 ---
 
-[TOC]
-
-
-
 ## 插件简介
 
-![image-20211105165558852](README.assets\image-20211105165558852.png)
+![image-20211105165558852](README.assets/image-20211105165558852.png)
 
 “Imposter” 可以理解为场景中一个原始模型的“替身”。不同于传统的 LOD 和基于合并多边形的 HLOD，该插件所使用的 Imposter 基于光场渲染，在运行时只通过一个朝向摄像机的平面（Billboard），可以显示出与原始模型别无二致的替身物体，并且效果优于低面数的 LOD 模型。
 
@@ -56,7 +54,7 @@ Imposter 技术可以用来生成一个原始模型的 LOD 模型，也可以生
 
 下列参数均被包含在结构体 `FImposterGeneratorSettings` 中。后期版本将会允许序列化该类型到硬盘中，作为固定的配置信息资产，并可直接设置在插件面板中。
 
-![image-20211108163609671](README.assets\image-20211108163609671.png)
+![image-20211108163609671](README.assets/image-20211108163609671.png)
 
 * **Imposter Type**：Imposter 的种类，其中包含：
 
@@ -109,7 +107,7 @@ Imposter 技术可以用来生成一个原始模型的 LOD 模型，也可以生
 
   当前插件预制了对于常用的 `BaseColorAlpha`，`NormalDepth`，`MetallicRoughnessSpecularAO` 的捕获材质。其为一个后处理材质，将待捕获的通道从 GBuffer 中取出并输出到对应分量中。用户也可以手动按照上述思路制作其余字段的捕获材质来拓展插件功能。
 
-  ![image-20211108170514549](README.assets\image-20211108170514549.png)
+  ![image-20211108170514549](README.assets/image-20211108170514549.png)
 
 * **Additional Capture Blit**：（可选）捕获的后处理。一些捕获后的纹理可能需要附加的后处理 Pass 才能呈现最好的效果。即捕获流程为 `Capture Pass -> Additional Blit Pass #1 -> Additional Blit Pass #2...`
 
@@ -143,7 +141,7 @@ Imposter 技术可以用来生成一个原始模型的 LOD 模型，也可以生
 
   对于上述内置材质 `M_Impostor_SimpleOffset` 来说，该名称为 `Default Mesh Size`。
 
-![image-20211108180710560](README.assets\image-20211108180710560.png)
+![image-20211108180710560](README.assets/image-20211108180710560.png)
 
 * **Imposter Material Texture Binding Map**：渲染 Imposter 的材质中纹理参数所对应的名称。
 * **Unit Quad**：Imposter 所使用的 Billboard 几何体（Static Mesh）。可以参考内置 Mesh `SubdividedPlane` 。
@@ -154,7 +152,7 @@ Imposter 技术可以用来生成一个原始模型的 LOD 模型，也可以生
 
 下列参数在每次生成时可能均会更改，因此不纳入配置资产文件：
 
-![image-20211108180744755](README.assets\image-20211108180744755.png)
+![image-20211108180744755](README.assets/image-20211108180744755.png)
 
 * **Imposter Name**：此次生成的 Imposter 名称。需要不和之前的命名重复。
 
@@ -164,7 +162,7 @@ Imposter 技术可以用来生成一个原始模型的 LOD 模型，也可以生
 
 #### 功能按钮
 
-![image-20211108181820233](README.assets\image-20211108181820233.png)
+![image-20211108181820233](README.assets/image-20211108181820233.png)
 
 其中 Actions 分类中的五个按钮在使用流程一章均有提及，此处不再赘述。
 
@@ -177,7 +175,7 @@ Imposter 技术可以用来生成一个原始模型的 LOD 模型，也可以生
 
 对于其材质实例来说，有下列可调节参数（以 `M_Impostor_SimpleOffset_Hemi_MRSA_Inst` 为例）：
 
-![image-20211108183130883](README.assets\image-20211108183130883.png)
+![image-20211108183130883](README.assets/image-20211108183130883.png)
 
 * **Full Sphere**：是否渲染为整个球面的 Imposter。该选项需要和上述捕获部分的配置保持一致。
 * **Use MSRA**：是否采样并输出 PBR 属性（Metallic, Roughness, Specular, AO）。关闭可以减少一张纹理使用，但效果会变差。
