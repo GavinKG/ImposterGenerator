@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// malosgao presents.
 
 #include "ImposterGenerator.h"
 #include "ImposterGeneratorStyle.h"

@@ -7,16 +7,6 @@
 #include "GameFramework/Actor.h"
 #include "ImposterManagerActor.generated.h"
 
-USTRUCT()
-struct FMyStruct
-{
-	GENERATED_BODY()
-
-	UPROPERTY()
-	float MyFloat;
-};
-
-
 UCLASS(BlueprintType, Blueprintable, AutoCollapseCategories=(Debug))
 class IMPOSTERGENERATOR_API AImposterManagerActor final : public AActor
 {

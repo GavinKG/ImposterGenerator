@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// malosgao presents.
 
 #include "ImposterGeneratorStyle.h"
 #include "Styling/SlateStyleRegistry.h"
