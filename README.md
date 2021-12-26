@@ -1,8 +1,6 @@
-# Imposter 插件 说明文档
+# Imposter 插件 说明文档 (CN)
 
 v1.0 | for Unreal Engine 4+
-
-malosgao(高锴庚)
 
 2021/11/8
 
