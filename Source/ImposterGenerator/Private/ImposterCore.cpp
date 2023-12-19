@@ -223,9 +223,9 @@ void UImposterCore::InitMpc()
 	UKismetMaterialLibrary::SetScalarParameterValue(GetWorld(), Settings.CaptureMpc, FName(TEXT("CaptureRadius")),
 	                                                CaptureBounds.SphereRadius);
 	UKismetMaterialLibrary::SetVectorParameterValue(GetWorld(), Settings.CaptureMpc, FName(TEXT("CaptureOrigin")),
-	                                                CaptureBounds.Origin);
+	                                                FLinearColor(CaptureBounds.Origin));
 	UKismetMaterialLibrary::SetVectorParameterValue(GetWorld(), Settings.CaptureMpc, FName(TEXT("CaptureExtent")),
-	                                                CaptureBounds.BoxExtent);
+	                                                FLinearColor(CaptureBounds.BoxExtent));
 	UKismetMaterialLibrary::SetScalarParameterValue(GetWorld(), Settings.CaptureMpc, FName(TEXT("TextureSize")),
 	                                                static_cast<float>(Settings.ImposterTextureRes));
 }

@@ -14,12 +14,12 @@ class IMPOSTERGENERATOR_API AImposterActor : public AActor
 public:
 	AImposterActor();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Imposter)
 	UStaticMeshComponent* StaticMeshComponent;
 
 	// Imposter should not cast shadows since it uses "Camera Position" instead of light position to do geometry calculation, and we cannot get light direction easily.
 	// May hardcoded a light direction in the future so I leave it with a parameter.
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Imposter)
 	bool bCastShadows = false;
 
 protected:

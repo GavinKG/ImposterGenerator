@@ -64,10 +64,10 @@ struct FImposterBlitSettings
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	EImposterCaptureType CaptureType;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	class UMaterialInterface* BlitMaterial;
 };
 
@@ -79,45 +79,45 @@ struct FImposterGeneratorSettings
 
 	FImposterGeneratorSettings();
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	EImposterSphereType ImposterType;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	TArray<EImposterCaptureType> CaptureTextureTypes;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	uint32 GridSize = 8;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	uint32 ImposterTextureRes = 4096;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	TMap<EImposterCaptureType, class UMaterialInterface*> CaptureMaterialMap;
 
 	// Used for custom multi-pass post-processing (aka. blit) on captured material map, like UV dilation and distance field generation.
 	// Blit will be executed in order.
 	// Same capture type can be used to achieve multi-pass blit.
 	// Source texture parameter should be named "Texture"
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	TArray<FImposterBlitSettings> AdditionalCaptureBlit;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	class UMaterialInterface* ImposterMaterial;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	FName ImposterMaterialGridSizeParam = TEXT("FramesXY");
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	FName ImposterMaterialSizeParam = TEXT("Default Mesh Size");
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	TMap<EImposterCaptureType, FString> ImposterMaterialTextureBindingMap;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	UStaticMesh* UnitQuad;
 
 	// This MPC is used by Imposter and SceneDepth remapping material.
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = Imposter)
 	UMaterialParameterCollection* CaptureMpc;
 
 	UPROPERTY(EditAnywhere, Category=Export)
@@ -168,7 +168,7 @@ public:
 
 public: // members
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Imposter)
 	FImposterGeneratorSettings Settings;
 
 private:

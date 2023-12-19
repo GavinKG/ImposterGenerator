@@ -14,7 +14,7 @@ class IMPOSTERGENERATOR_API AImposterCaptureActor : public AActor
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Imposter)
 	class USceneCaptureComponent2D* SceneCaptureComponent2D;
 
 public:
